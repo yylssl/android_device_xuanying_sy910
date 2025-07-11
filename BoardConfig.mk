@@ -4,27 +4,45 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/askey/wade
+DEVICE_PATH := device/xuanying/sy910
+
+TARGET_BOARD_PLATFORM_PRODUCT := atv
+
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 :=
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT_RUNTIME := cortex-a53
+TARGET_CPU_SMP := true
+
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv8-a
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := generic
+TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
+
+PRODUCT_KERNEL_VERSION := 5.10
+
+PRODUCT_KERNEL_ARCH = arm64
+PRODUCT_KERNEL_DTS = rk3528-demo4-ddr4-v10
+PRODUCT_KERNEL_CONFIG = rockchip_defconfig
+
+PRODUCT_BOOT_DEVICE := ffbf0000.mmc
 
 ## Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
-BOARD_CUSTOM_BT_CONFIG := $(DEVICE_PATH)/bluetooth/vnd_wade.txt
 BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
 
 ## Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := wade
+TARGET_BOOTLOADER_BOARD_NAME := sy910
 
 ## DTB
-TARGET_DTB_NAME := g12a_s905x2_u212_sti6130d3x0
-TARGET_DTBO_NAME := sti6140d350_overlay
+TARGET_DTB_NAME := rk3528-demo4-ddr4-v10
+TARGET_DTBO_NAME := sy910_overlay
 
 ## HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
-
-## Kernel modules
-TARGET_KERNEL_EXT_MODULES := \
-    dhd-driver/bcmdhd.101.10.361.x
 
 ## Partitions
 BOARD_SUPER_PARTITION_SIZE := 1677721600
@@ -35,19 +53,3 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 ## SELinux
 SELINUX_IGNORE_NEVERALLOWS := true
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-
-## Wi-Fi
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
-BOARD_WLAN_DEVICE := bcmdhd
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
-WIFI_DRIVER_FW_PATH_AP := "/wifi/fw_bcm4356a2_ag_apsta.bin"
-WIFI_DRIVER_FW_PATH_STA := "/wifi/fw_bcm4356a2_ag.bin"
-WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/dhd/parameters/firmware_path"
-WPA_SUPPLICANT_VERSION := VER_0_8_X
-
-## Include the common tree BoardConfig makefile
-include device/amlogic/g12-common/BoardConfigCommon.mk
-
-## Include the proprietary BoardConfig makefile
-include vendor/askey/wade/BoardConfigVendor.mk

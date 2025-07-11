@@ -17,17 +17,9 @@ $(call inherit-product, vendor/lineage/config/common_full_tv.mk)
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_BRAND := Askey
-PRODUCT_DEVICE := wade
-PRODUCT_GMS_CLIENTID_BASE := android-askey-tv
-PRODUCT_MANUFACTURER := askey
-PRODUCT_MODEL := Dynalink TV Box
-PRODUCT_NAME := lineage_wade
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="sti6130d350-user 12 SC 20240723 release-keys" \
-    BuildFingerprint=Dynalink/sti6130d350/sti6130d350:12/SC/20240723:user/release-keys \
-    DeviceName=wade \
-    DeviceProduct=sti6130d350 \
-    SystemDevice=sti6130d350 \
-    SystemName=sti6130d350
+PRODUCT_BRAND := XuanYing
+PRODUCT_DEVICE := sy910
+PRODUCT_GMS_CLIENTID_BASE := android-xuanying-tv
+PRODUCT_MANUFACTURER := xuanying
+PRODUCT_MODEL := SY910 TV Box
+PRODUCT_NAME := lineage_sy910
