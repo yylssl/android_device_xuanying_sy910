@@ -16,6 +16,8 @@ $(call inherit-product, vendor/lineage/config/common_full_tv.mk)
 # Inherit device configuration
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_BRAND := XuanYing
 PRODUCT_DEVICE := sy910
