@@ -5,7 +5,7 @@
 #
 
 ## Bluetooth
-bluetooth.device.default_name=Dynalink TV Box
+bluetooth.device.default_name=SY910 TV Box
 bluetooth.profile.hfp.ag.enabled=false
 bluetooth.profile.opp.enabled=false
 bluetooth.profile.pbap.server.enabled=false
@@ -15,11 +15,8 @@ ro.vendor.platform.support.dolbyvision=false
 vendor.media.support.dolbyvision=false
 
 ## NRDP
-ro.vendor.nrdp.modelgroup=STI6130D350
-ro.vendor.nrdp.oemmodel="Dynalink_Dynalink TV Box"
+ro.vendor.nrdp.modelgroup=SY910
+ro.vendor.nrdp.oemmodel="XuanYing_SY910 TV Box"
 
 ## SOC
-ro.soc.model=AMLS905X2
-
-## Wi-Fi
-vendor.bcm_wifi=bcm
+ro.soc.model=RK3528
